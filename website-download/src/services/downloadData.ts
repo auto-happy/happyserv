@@ -61,7 +61,7 @@ const versionData: Version[] = [
     platform: p.id,
     filename: `HappyServ-2.1.0-${p.id}.${p.id === 'windows' ? 'exe' : p.id === 'macos' ? 'dmg' : p.id === 'linux' ? 'AppImage' : p.id === 'android' ? 'apk' : 'ipa'}`,
     size: p.id === 'windows' ? '97.1 MB' : p.id === 'linux' ? '58.7 MB' : p.id === 'macos' ? '72.1 MB' : p.id === 'android' ? '32.5 MB' : '45.8 MB',
-    sha256: '9d3c6c702033911f541aec1204eb671eb2729bab450630f27b0209fa61d7b0ab',
+    sha256: '63e6694dd2d20dc83c0e75048c8512d68cfed19c97bf3dfbd5513225d2b69ca9',
     releaseDate: '2026-07-01',
     type: 'stable' as const,
     changelog: changelogs['2.1.0'],
