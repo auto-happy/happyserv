@@ -1,0 +1,15 @@
+[Unit]
+Description=HappyServ Network Watchdog
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'while true; do if ! ping -c1 -W5 8.8.8.8 >/dev/null 2>&1; then systemctl restart docker; fi; sleep 60; done'
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

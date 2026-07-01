@@ -1,0 +1,11 @@
+[Unit]
+Description=HappyServ Auto Update Timer
+Requires=happyserv-auto-update.service
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+RandomizedDelaySec=3600
+
+[Install]
+WantedBy=timers.target

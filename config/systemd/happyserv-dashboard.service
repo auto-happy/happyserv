@@ -1,0 +1,20 @@
+[Unit]
+Description=HappyServ Dashboard Service
+After=docker.service
+Requires=docker.service
+BindsTo=happyserv-docker.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker compose -f /home/happyserv/docker/compose/prod/docker-compose.yml up -d portal
+ExecStop=/usr/bin/docker compose -f /home/happyserv/docker/compose/prod/docker-compose.yml stop portal
+ExecReload=/usr/bin/docker compose -f /home/happyserv/docker/compose/prod/docker-compose.yml restart portal
+WorkingDirectory=/home/happyserv
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=happyserv-docker.target

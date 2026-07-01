@@ -1,0 +1,129 @@
+# Alert Rules — HappyServ
+groups:
+  - name: happyserv_alerts
+    interval: 30s
+    rules:
+
+      # === CPU ===
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage > 80% (instance {{ $labels.instance }})"
+          description: "CPU usage is at {{ $value }}% for 5 minutes"
+
+      - alert: CriticalCPUUsage
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 95
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "CPU usage > 95% (instance {{ $labels.instance }})"
+          description: "CPU usage is at {{ $value }}% — immediate action required"
+
+      # === Memory ===
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Memory usage > 85% (instance {{ $labels.instance }})"
+          description: "Memory usage is at {{ $value }}%"
+
+      - alert: CriticalMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 95
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Memory usage > 95% (instance {{ $labels.instance }})"
+          description: "Memory usage is at {{ $value }}% — OOM risk"
+
+      # === Disk ===
+      - alert: DiskSpaceWarning
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk space < 15% free (instance {{ $labels.instance }})"
+          description: "Disk is {{ $value }}% full"
+
+      - alert: DiskSpaceCritical
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 5
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disk space < 5% free (instance {{ $labels.instance }})"
+          description: "Disk is {{ $value }}% full — data loss risk"
+
+      # === Service Down ===
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is DOWN (instance {{ $labels.instance }})"
+          description: "{{ $labels.job }} has been unreachable for 1 minute"
+
+      # === API Specific ===
+      - alert: APIHighErrorRate
+        expr: rate(http_requests_total{status=~"5..", job="api"}[5m]) / rate(http_requests_total{job="api"}[5m]) * 100 > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API error rate > 5%"
+          description: "API 5xx rate is at {{ $value }}%"
+
+      - alert: APISlowResponse
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="api"}[5m])) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API p95 latency > 1s"
+          description: "API p95 latency is {{ $value }}s"
+
+      # === PostgreSQL ===
+      - alert: PostgresDown
+        expr: pg_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL is DOWN"
+          description: "PostgreSQL has been unreachable for 1 minute"
+
+      - alert: PostgresHighConnections
+        expr: pg_stat_activity_count > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL connections > 80"
+          description: "PostgreSQL has {{ $value }} active connections"
+
+      # === Redis ===
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Redis is DOWN"
+          description: "Redis has been unreachable for 1 minute"
+
+      - alert: RedisHighMemory
+        expr: (redis_memory_used_bytes / redis_memory_max_bytes) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Redis memory usage > 85%"
+          description: "Redis memory is at {{ $value }}% of max"

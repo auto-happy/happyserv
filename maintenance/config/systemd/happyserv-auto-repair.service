@@ -1,0 +1,11 @@
+[Unit]
+Description=HappyServ Auto-Repair Service
+After=network-online.target docker.service
+Wants=network-online.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/happyserv/maintenance/scripts/auto-repair.sh
+WorkingDirectory=/home/happyserv/maintenance
+StandardOutput=journal
+StandardError=journal

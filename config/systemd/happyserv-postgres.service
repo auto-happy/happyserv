@@ -1,0 +1,19 @@
+[Unit]
+Description=HappyServ PostgreSQL Service
+After=docker.service
+Requires=docker.service
+BindsTo=happyserv-docker.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker compose -f /home/happyserv/docker/compose/prod/docker-compose.yml up -d postgres
+ExecStop=/usr/bin/docker compose -f /home/happyserv/docker/compose/prod/docker-compose.yml stop postgres
+WorkingDirectory=/home/happyserv
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=happyserv-docker.target

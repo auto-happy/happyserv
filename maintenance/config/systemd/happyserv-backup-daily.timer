@@ -1,0 +1,11 @@
+[Unit]
+Description=HappyServ Daily Backup Timer (00:00)
+Requires=happyserv-backup-daily.service
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirection...</title>
+  <script>
+    var segment = location.pathname.replace(/\/happyserv\/?/, '/');
+    sessionStorage.redirect = segment + location.search;
+    location.replace('/happyserv/');
+  </script>
+</head>
+<body>
+  <p>Redirection...</p>
+</body>
+</html>

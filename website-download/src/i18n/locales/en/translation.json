@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "accueil": "Home",
+    "telechargement": "Download",
+    "nouveautes": "What's New",
+    "documentation": "Documentation",
+    "tutoriels": "Tutorials",
+    "faq": "FAQ",
+    "captures": "Screenshots",
+    "videos": "Videos",
+    "support": "Support",
+    "blog": "Blog",
+    "aPropos": "About",
+    "contact": "Contact",
+    "statut": "Status",
+    "admin": "Administration"
+  },
+  "hero": {
+    "title": "The driving app that guides you",
+    "subtitle": "HappyServ helps you prepare for your driver's license with smart features, personalized tracking, and an active community.",
+    "cta": "Download for free",
+    "secondary": "See features",
+    "stats": {
+      "downloads": "Downloads",
+      "users": "Active users",
+      "rating": "Average rating",
+      "countries": "Countries"
+    }
+  },
+  "features": {
+    "title": "Everything you need to succeed",
+    "subtitle": "Powerful tools to accompany you from learning to getting your license.",
+    "items": {
+      "planning": {
+        "title": "Smart planning",
+        "desc": "Organize your driving sessions with adaptive scheduling that learns from your availability."
+      },
+      "tracking": {
+        "title": "Real-time tracking",
+        "desc": "Visualize your progress with detailed statistics and personalized reports."
+      },
+      "community": {
+        "title": "Active community",
+        "desc": "Connect with other learners, share tips and find support."
+      },
+      "offline": {
+        "title": "Offline mode",
+        "desc": "Access your courses and content even without an Internet connection."
+      }
+    }
+  },
+  "download": {
+    "title": "Download HappyServ",
+    "subtitle": "Available on all your favorite platforms",
+    "choosePlatform": "Choose your platform",
+    "stable": "Stable version",
+    "beta": "Beta version",
+    "download": "Download",
+    "sha256": "SHA256 fingerprint",
+    "releaseNotes": "Release notes",
+    "size": "Size",
+    "platforms": {
+      "windows": "Windows",
+      "linux": "Linux",
+      "macos": "macOS",
+      "android": "Android",
+      "ios": "iOS"
+    }
+  },
+  "news": {
+    "title": "What's New",
+    "subtitle": "Discover the latest HappyServ updates",
+    "readMore": "Read more"
+  },
+  "doc": {
+    "title": "Documentation",
+    "subtitle": "Learn how to use HappyServ with our detailed guides",
+    "categories": {
+      "gettingStarted": "Getting started",
+      "features": "Features",
+      "advanced": "Advanced",
+      "troubleshooting": "Troubleshooting"
+    }
+  },
+  "tutorials": {
+    "title": "Tutorials",
+    "subtitle": "Step-by-step guides to master HappyServ",
+    "difficulty": "Difficulty",
+    "duration": "Duration",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Quickly find answers to your questions"
+  },
+  "screenshots": {
+    "title": "Screenshots",
+    "subtitle": "Discover the HappyServ interface"
+  },
+  "videos": {
+    "title": "Videos",
+    "subtitle": "Watch our video tutorials and demos"
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "How can we help you?",
+    "email": "support@happyserv.app",
+    "phone": "+33 1 23 45 67 89",
+    "hours": "Mon-Fri, 9am-6pm",
+    "contactForm": "Contact form",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "submit": "Send",
+    "successMessage": "Message sent successfully! We will get back to you as soon as possible."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "News, tips and tricks for safe driving",
+    "readMore": "Read article",
+    "by": "By",
+    "minRead": "min read"
+  },
+  "about": {
+    "title": "About HappyServ",
+    "subtitle": "Our mission: making driver education accessible to everyone",
+    "story": {
+      "title": "Our story",
+      "content": "HappyServ was born from a simple observation: traditional driving education methods don't meet the needs of today's learners. Founded in 2024, our passionate team developed an app that combines cutting-edge technology with innovative pedagogy to deliver a unique learning experience."
+    },
+    "values": {
+      "title": "Our values",
+      "items": {
+        "innovation": {
+          "title": "Innovation",
+          "desc": "We use the latest technologies to improve the learning experience."
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "desc": "HappyServ is free and available to everyone, everywhere in the world."
+        },
+        "community": {
+          "title": "Community",
+          "desc": "We believe in the power of mutual aid and sharing among learners."
+        }
+      }
+    },
+    "team": {
+      "title": "Our team"
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "A question? A suggestion? Feel free to write to us.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "Your message",
+      "submit": "Send message",
+      "success": "Message sent successfully!"
+    },
+    "info": {
+      "email": "contact@happyserv.app",
+      "phone": "+33 1 23 45 67 89",
+      "address": "123 Innovation Street, 75001 Paris, France"
+    }
+  },
+  "legal": {
+    "mentions": {
+      "title": "Legal notices",
+      "content": "HappyServ is a simplified joint-stock company with a capital of €10,000, registered with the Paris Trade and Companies Register under number 123 456 789. Registered office: 123 Rue de l'Innovation, 75001 Paris. VAT number: FR12345678901. Publication director: Jean Dupont."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "content": "We take the protection of your personal data very seriously. This policy describes how we collect, use and protect your information when you use HappyServ."
+    },
+    "terms": {
+      "title": "Terms of service",
+      "content": "These terms of service govern the use of the HappyServ application. By using the application, you accept these terms in their entirety."
+    }
+  },
+  "status": {
+    "title": "Service status",
+    "subtitle": "Check the real-time status of our services",
+    "operational": "Operational",
+    "degraded": "Degraded performance",
+    "down": "Down",
+    "uptime": "Uptime",
+    "lastIncident": "Last incident",
+    "noIncident": "No incidents",
+    "services": {
+      "api": "API",
+      "websocket": "WebSocket",
+      "database": "Database",
+      "cdn": "CDN",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "legal": "Legal notices",
+    "privacy": "Privacy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "soon": "Coming soon",
+    "learnMore": "Learn more"
+  },
+  "admin": {
+    "title": "Administration",
+    "dashboard": "Dashboard",
+    "versions": "Versions",
+    "users": "Users",
+    "stats": "Statistics",
+    "blog": "Blog",
+    "logs": "Logs",
+    "totalDownloads": "Total downloads",
+    "totalVersions": "Total versions",
+    "activeUsers": "Active users",
+    "newToday": "New today",
+    "addVersion": "Add version",
+    "editVersion": "Edit version",
+    "deleteVersion": "Delete version",
+    "versionName": "Version name",
+    "platform": "Platform",
+    "file": "File",
+    "actions": "Actions",
+    "publish": "Publish",
+    "draft": "Draft",
+    "search": "Search...",
+    "logout": "Logout"
+  }
+}

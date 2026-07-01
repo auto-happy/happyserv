@@ -1,0 +1,118 @@
+version: "3.8"
+
+networks:
+  frontend_network:
+    driver: bridge
+  backend_network:
+    driver: bridge
+  db_network:
+    driver: bridge
+  redis_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: happyserv-nginx-dev
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/happyserv/config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /home/happyserv/config/nginx/conf.d:/etc/nginx/conf.d:ro
+      - /home/happyserv/config/nginx/sites-available:/etc/nginx/sites-available:ro
+      - /home/happyserv/config/nginx/proxy:/etc/nginx/proxy:ro
+      - /home/happyserv/config/nginx/snippets:/etc/nginx/snippets:ro
+      - /home/happyserv/website-download/dist:/var/www/telehappy:ro
+    networks:
+      - frontend_network
+      - backend_network
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - api
+      - portal
+    restart: unless-stopped
+
+  api:
+    build:
+      context: /home/happyserv/api
+      dockerfile: Dockerfile.dev
+    container_name: happyserv-api-dev
+    env_file:
+      - /home/happyserv/config/env/dev/.env.api
+    volumes:
+      - /home/happyserv/api/src:/app/src
+      - /home/happyserv/api/package.json:/app/package.json
+    networks:
+      - backend_network
+      - db_network
+      - redis_network
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  portal:
+    build:
+      context: /home/happyserv/website-app
+      dockerfile: Dockerfile.dev
+    container_name: happyserv-portal-dev
+    volumes:
+      - /home/happyserv/website-app/src:/app/src
+    networks:
+      - backend_network
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  telehappy:
+    image: nginx:alpine
+    container_name: happyserv-telehappy-dev
+    volumes:
+      - /home/happyserv/website-download/dist:/usr/share/nginx/html:ro
+    networks:
+      - frontend_network
+      - backend_network
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: happyserv-postgres-dev
+    environment:
+      POSTGRES_USER: happyserv_dev
+      POSTGRES_PASSWORD: happyserv_dev_password
+      POSTGRES_DB: happyserv_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /home/happyserv/database/postgres/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - db_network
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: happyserv-redis-dev
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - redis_data:/data
+      - /home/happyserv/database/redis/conf/redis.dev.conf:/usr/local/etc/redis/redis.conf:ro
+    networks:
+      - redis_network
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "accueil": "Accueil",
+    "telechargement": "Téléchargement",
+    "nouveautes": "Nouveautés",
+    "documentation": "Documentation",
+    "tutoriels": "Tutoriels",
+    "faq": "FAQ",
+    "captures": "Captures",
+    "videos": "Vidéos",
+    "support": "Support",
+    "blog": "Blog",
+    "aPropos": "À propos",
+    "contact": "Contact",
+    "statut": "Statut",
+    "admin": "Administration"
+  },
+  "hero": {
+    "title": "L'application de conduite qui vous accompagne",
+    "subtitle": "HappyServ vous aide à préparer votre permis de conduire avec des fonctionnalités intelligentes, un suivi personnalisé et une communauté active.",
+    "cta": "Télécharger gratuitement",
+    "secondary": "Voir les fonctionnalités",
+    "stats": {
+      "downloads": "Téléchargements",
+      "users": "Utilisateurs actifs",
+      "rating": "Note moyenne",
+      "countries": "Pays"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour réussir",
+    "subtitle": "Des outils puissants pour vous accompagner de l'apprentissage à l'obtention de votre permis.",
+    "items": {
+      "planning": {
+        "title": "Planning intelligent",
+        "desc": "Organisez vos séances de conduite avec un planning adaptatif qui apprend de vos disponibilités."
+      },
+      "tracking": {
+        "title": "Suivi en temps réel",
+        "desc": "Visualisez votre progression avec des statistiques détaillées et des rapports personnalisés."
+      },
+      "community": {
+        "title": "Communauté active",
+        "desc": "Échangez avec d'autres apprenants, partagez vos conseils et trouvez du soutien."
+      },
+      "offline": {
+        "title": "Mode hors-ligne",
+        "desc": "Accédez à vos cours et à votre contenu même sans connexion Internet."
+      }
+    }
+  },
+  "download": {
+    "title": "Télécharger HappyServ",
+    "subtitle": "Disponible sur toutes vos plateformes préférées",
+    "choosePlatform": "Choisissez votre plateforme",
+    "stable": "Version stable",
+    "beta": "Version bêta",
+    "download": "Télécharger",
+    "sha256": "Empreinte SHA256",
+    "releaseNotes": "Notes de version",
+    "size": "Taille",
+    "platforms": {
+      "windows": "Windows",
+      "linux": "Linux",
+      "macos": "macOS",
+      "android": "Android",
+      "ios": "iOS"
+    }
+  },
+  "news": {
+    "title": "Nouveautés",
+    "subtitle": "Découvrez les dernières évolutions de HappyServ",
+    "readMore": "Lire la suite"
+  },
+  "doc": {
+    "title": "Documentation",
+    "subtitle": "Apprenez à utiliser HappyServ avec nos guides détaillés",
+    "categories": {
+      "gettingStarted": "Premiers pas",
+      "features": "Fonctionnalités",
+      "advanced": "Avancé",
+      "troubleshooting": "Dépannage"
+    }
+  },
+  "tutorials": {
+    "title": "Tutoriels",
+    "subtitle": "Des guides pas à pas pour maîtriser HappyServ",
+    "difficulty": "Difficulté",
+    "duration": "Durée",
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Trouvez rapidement une réponse à vos questions"
+  },
+  "screenshots": {
+    "title": "Captures d'écran",
+    "subtitle": "Découvrez l'interface de HappyServ"
+  },
+  "videos": {
+    "title": "Vidéos",
+    "subtitle": "Regardez nos tutoriels vidéo et démos"
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "Comment pouvons-nous vous aider ?",
+    "email": "support@happyserv.app",
+    "phone": "+33 1 23 45 67 89",
+    "hours": "Lun-Ven, 9h-18h",
+    "contactForm": "Formulaire de contact",
+    "nameLabel": "Nom",
+    "emailLabel": "Email",
+    "subjectLabel": "Sujet",
+    "messageLabel": "Message",
+    "submit": "Envoyer",
+    "successMessage": "Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Actualités, conseils et astuces pour bien conduire",
+    "readMore": "Lire l'article",
+    "by": "Par",
+    "minRead": "min de lecture"
+  },
+  "about": {
+    "title": "À propos de HappyServ",
+    "subtitle": "Notre mission : rendre l'apprentissage de la conduite accessible à tous",
+    "story": {
+      "title": "Notre histoire",
+      "content": "HappyServ est né d'un constat simple : les méthodes traditionnelles d'apprentissage de la conduite ne sont pas adaptées aux besoins des apprenants d'aujourd'hui. Fondée en 2024, notre équipe passionnée a développé une application qui combine technologie de pointe et pédagogie innovante pour offrir une expérience d'apprentissage unique."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "items": {
+        "innovation": {
+          "title": "Innovation",
+          "desc": "Nous utilisons les dernières technologies pour améliorer l'expérience d'apprentissage."
+        },
+        "accessibility": {
+          "title": "Accessibilité",
+          "desc": "HappyServ est gratuit et disponible pour tous, partout dans le monde."
+        },
+        "community": {
+          "title": "Communauté",
+          "desc": "Nous croyons en la force de l'entraide et du partage entre apprenants."
+        }
+      }
+    },
+    "team": {
+      "title": "Notre équipe"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question ? Une suggestion ? N'hésitez pas à nous écrire.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "subject": "Sujet",
+      "message": "Votre message",
+      "submit": "Envoyer le message",
+      "success": "Message envoyé avec succès !"
+    },
+    "info": {
+      "email": "contact@happyserv.app",
+      "phone": "+33 1 23 45 67 89",
+      "address": "123 Rue de l'Innovation, 75001 Paris, France"
+    }
+  },
+  "legal": {
+    "mentions": {
+      "title": "Mentions légales",
+      "content": "HappyServ est une société par actions simplifiée au capital de 10 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789. Siège social : 123 Rue de l'Innovation, 75001 Paris. Numéro de TVA intracommunautaire : FR12345678901. Directeur de la publication : Jean Dupont."
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "content": "Nous accordons une grande importance à la protection de vos données personnelles. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez HappyServ."
+    },
+    "terms": {
+      "title": "Conditions générales d'utilisation",
+      "content": "Les présentes conditions générales d'utilisation régissent l'utilisation de l'application HappyServ. En utilisant l'application, vous acceptez ces conditions dans leur intégralité."
+    }
+  },
+  "status": {
+    "title": "Statut des services",
+    "subtitle": "Vérifiez l'état de fonctionnement de nos services en temps réel",
+    "operational": "Opérationnel",
+    "degraded": "Performances réduites",
+    "down": "Indisponible",
+    "uptime": "Disponibilité",
+    "lastIncident": "Dernier incident",
+    "noIncident": "Aucun incident",
+    "services": {
+      "api": "API",
+      "websocket": "WebSocket",
+      "database": "Base de données",
+      "cdn": "CDN",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "CGU",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "back": "Retour",
+    "soon": "Bientôt disponible",
+    "learnMore": "En savoir plus"
+  },
+  "admin": {
+    "title": "Administration",
+    "dashboard": "Tableau de bord",
+    "versions": "Versions",
+    "users": "Utilisateurs",
+    "stats": "Statistiques",
+    "blog": "Blog",
+    "logs": "Journaux",
+    "totalDownloads": "Téléchargements totaux",
+    "totalVersions": "Versions totales",
+    "activeUsers": "Utilisateurs actifs",
+    "newToday": "Nouveaux aujourd'hui",
+    "addVersion": "Ajouter une version",
+    "editVersion": "Modifier la version",
+    "deleteVersion": "Supprimer la version",
+    "versionName": "Nom de la version",
+    "platform": "Plateforme",
+    "file": "Fichier",
+    "actions": "Actions",
+    "publish": "Publier",
+    "draft": "Brouillon",
+    "search": "Rechercher...",
+    "logout": "Déconnexion"
+  }
+}

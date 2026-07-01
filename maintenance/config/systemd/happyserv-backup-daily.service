@@ -1,0 +1,11 @@
+[Unit]
+Description=HappyServ Daily Backup Service
+After=network-online.target docker.service postgres.service
+Wants=network-online.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/happyserv/maintenance/scripts/backup.sh
+WorkingDirectory=/home/happyserv/maintenance
+StandardOutput=journal
+StandardError=journal

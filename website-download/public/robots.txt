@@ -1,0 +1,7 @@
+# HappyServ - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://telehappy.netlify.app/sitemap.xml

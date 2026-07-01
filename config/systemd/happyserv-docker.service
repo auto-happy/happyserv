@@ -1,0 +1,19 @@
+[Unit]
+Description=HappyServ Docker Network Setup
+After=docker.service
+Requires=docker.service
+Before=happyserv-nginx.service happyserv-api.service happyserv-dashboard.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker network create frontend_network --driver bridge --subnet 172.20.0.0/16 2>/dev/null || true
+ExecStart=/usr/bin/docker network create backend_network --driver bridge --subnet 172.21.0.0/16 2>/dev/null || true
+ExecStart=/usr/bin/docker network create db_network --driver bridge --subnet 172.22.0.0/16 2>/dev/null || true
+ExecStart=/usr/bin/docker network create redis_network --driver bridge --subnet 172.23.0.0/16 2>/dev/null || true
+WorkingDirectory=/home/happyserv
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=happyserv-docker.target

@@ -1,0 +1,9 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Un module exemple qui affiche Hello World",
+  "author": "HappyServ",
+  "main": "index.js",
+  "minAppVersion": "1.0.0",
+  "permissions": ["notifications"]
+}

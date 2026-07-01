@@ -1,0 +1,10 @@
+[Unit]
+Description=HappyServ Auto-Repair Timer (every 30 min)
+Requires=happyserv-auto-repair.service
+
+[Timer]
+OnCalendar=*:0/30
+Persistent=true
+
+[Install]
+WantedBy=timers.target

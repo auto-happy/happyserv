@@ -1,0 +1,37 @@
+version: "3.8"
+
+networks:
+  db_network:
+    driver: bridge
+
+volumes:
+  postgres_data_test:
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: happyserv-postgres-test
+    environment:
+      POSTGRES_USER: happyserv_test
+      POSTGRES_PASSWORD: happyserv_test_password
+      POSTGRES_DB: happyserv_test
+    volumes:
+      - postgres_data_test:/var/lib/postgresql/data
+      - /home/happyserv/database/postgres/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - db_network
+    ports:
+      - "5433:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    restart: no
+
+  redis:
+    image: redis:7-alpine
+    container_name: happyserv-redis-test
+    command: redis-server --save "" --appendonly no
+    networks:
+      - db_network
+    ports:
+      - "6380:6379"
+    restart: no

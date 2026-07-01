@@ -1,0 +1,5 @@
+[Unit]
+Description=HappyServ Docker Services Target
+After=docker.service
+Requires=docker.service
+Wants=happyserv-docker.service happyserv-nginx.service happyserv-api.service happyserv-dashboard.service happyserv-postgres.service happyserv-redis.service

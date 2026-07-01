@@ -1,0 +1,190 @@
+version: "3.8"
+
+networks:
+  frontend_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+  backend_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+  db_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/16
+  redis_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
+  monitoring_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  nginx_html:
+    driver: local
+  nginx_certs:
+    driver: local
+  nginx_logs:
+    driver: local
+  api_logs:
+    driver: local
+  grafana_data:
+    driver: local
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: happyserv-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - nginx_html:/var/www:ro
+      - nginx_certs:/etc/nginx/certs:ro
+      - nginx_logs:/var/log/nginx
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./config/nginx/sites-available:/etc/nginx/sites-available:ro
+      - ./config/nginx/proxy:/etc/nginx/proxy:ro
+      - ./config/nginx/snippets:/etc/nginx/snippets:ro
+    networks:
+      - frontend_network
+      - backend_network
+    depends_on:
+      - api
+      - portal
+      - telehappy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+    read_only: true
+
+  api:
+    build:
+      context: /home/happyserv/api
+      dockerfile: Dockerfile
+    container_name: happyserv-api
+    env_file:
+      - /home/happyserv/config/env/prod/.env.api
+    volumes:
+      - api_logs:/app/logs
+    networks:
+      - backend_network
+      - db_network
+      - redis_network
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp
+    read_only: true
+    user: node
+
+  portal:
+    build:
+      context: /home/happyserv/website-app
+      dockerfile: Dockerfile
+    container_name: happyserv-portal
+    networks:
+      - backend_network
+    depends_on:
+      - api
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp
+    read_only: true
+
+  telehappy:
+    build:
+      context: /home/happyserv/website-download
+      dockerfile: Dockerfile
+    container_name: happyserv-telehappy
+    networks:
+      - frontend_network
+      - backend_network
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+    read_only: true
+
+  postgres:
+    build:
+      context: /home/happyserv/docker/database/postgres
+      dockerfile: Dockerfile
+    container_name: happyserv-postgres
+    env_file:
+      - /home/happyserv/config/env/prod/.env.database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /home/happyserv/database/postgres/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - db_network
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETUID
+      - SETGID
+    tmpfs:
+      - /tmp
+    read_only: true
+    user: postgres
+
+  redis:
+    build:
+      context: /home/happyserv/docker/database/redis
+      dockerfile: Dockerfile
+    container_name: happyserv-redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - redis_network
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    tmpfs:
+      - /tmp
+    read_only: true
