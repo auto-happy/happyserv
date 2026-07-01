@@ -45,3 +45,7 @@ snap/
 .gitconfig
 .happyserv/
 .anthracode/
+
+# Release builds
+releases/
+*.zip
