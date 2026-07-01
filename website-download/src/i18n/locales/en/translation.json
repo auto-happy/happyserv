@@ -56,6 +56,7 @@
     "stable": "Stable version",
     "beta": "Beta version",
     "download": "Download",
+    "comingSoon": "Coming soon",
     "sha256": "SHA256 fingerprint",
     "releaseNotes": "Release notes",
     "size": "Size",

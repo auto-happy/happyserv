@@ -56,6 +56,7 @@
     "stable": "Version stable",
     "beta": "Version bêta",
     "download": "Télécharger",
+    "comingSoon": "Bientôt disponible",
     "sha256": "Empreinte SHA256",
     "releaseNotes": "Notes de version",
     "size": "Taille",

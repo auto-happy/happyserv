@@ -71,15 +71,22 @@ export default function Telechargement() {
                   <h3 className="text-xl font-bold text-white">HappyServ v{latest.version}</h3>
                   <p className="text-sm text-gray-400">{t('download.size')} : {latest.size}</p>
                 </div>
-                <a
-                  href={getDownloadUrl(latest)}
-                  className="btn-download inline-flex items-center"
-                >
-                  <HiDownload className="mr-2" />
-                  {t('download.download')}
-                </a>
+                {latest.size !== 'N/A' ? (
+                  <a
+                    href={getDownloadUrl(latest)}
+                    className="btn-download inline-flex items-center"
+                  >
+                    <HiDownload className="mr-2" />
+                    {t('download.download')}
+                  </a>
+                ) : (
+                  <span className="bg-gray-800 text-gray-500 rounded-lg px-4 py-2.5 text-sm font-medium">
+                    {t('download.comingSoon')}
+                  </span>
+                )}
               </div>
 
+              {latest.sha256 !== 'N/A' && (
               <div className="bg-gray-950 rounded-lg p-4 mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-400 flex items-center">
@@ -93,6 +100,7 @@ export default function Telechargement() {
                 </div>
                 <code className="text-xs text-gray-500 break-all">{latest.sha256}</code>
               </div>
+              )}
 
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">{t('download.releaseNotes')} - v{latest.changelog.version}</h4>
@@ -116,9 +124,13 @@ export default function Telechargement() {
                   <h4 className="font-semibold text-white">v{v.version}</h4>
                   <p className="text-xs text-gray-500">{v.releaseDate} - {v.size}</p>
                 </div>
-                <a href={getDownloadUrl(v)} className="btn-secondary text-sm py-2 px-4">
-                  {t('download.download')}
-                </a>
+                {v.size !== 'N/A' ? (
+                  <a href={getDownloadUrl(v)} className="btn-secondary text-sm py-2 px-4">
+                    {t('download.download')}
+                  </a>
+                ) : (
+                  <span className="text-xs text-gray-500">{t('download.comingSoon')}</span>
+                )}
               </div>
             </div>
           ))}
