@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://telehappy.netlify.app/sitemap.xml
+Sitemap: https://happyserv.netlify.app/sitemap.xml

@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://telehappy.netlify.app/</loc>
+    <loc>https://happyserv.netlify.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/telechargement</loc>
+    <loc>https://happyserv.netlify.app/telechargement</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/nouveautes</loc>
+    <loc>https://happyserv.netlify.app/nouveautes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/documentation</loc>
+    <loc>https://happyserv.netlify.app/documentation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/tutoriels</loc>
+    <loc>https://happyserv.netlify.app/tutoriels</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/faq</loc>
+    <loc>https://happyserv.netlify.app/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/captures</loc>
+    <loc>https://happyserv.netlify.app/captures</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/videos</loc>
+    <loc>https://happyserv.netlify.app/videos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/support</loc>
+    <loc>https://happyserv.netlify.app/support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/blog</loc>
+    <loc>https://happyserv.netlify.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/a-propos</loc>
+    <loc>https://happyserv.netlify.app/a-propos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/contact</loc>
+    <loc>https://happyserv.netlify.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/mentions-legales</loc>
+    <loc>https://happyserv.netlify.app/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/confidentialite</loc>
+    <loc>https://happyserv.netlify.app/confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/conditions-utilisation</loc>
+    <loc>https://happyserv.netlify.app/conditions-utilisation</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://telehappy.netlify.app/statut</loc>
+    <loc>https://happyserv.netlify.app/statut</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
