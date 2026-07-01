@@ -1,0 +1,17 @@
+[Unit]
+Description=HappyServ Security Monitor
+After=network.target docker.service
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/happyserv/security/monitor/security-monitor.sh
+Restart=on-failure
+RestartSec=60
+User=root
+Group=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

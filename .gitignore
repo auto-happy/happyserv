@@ -1,0 +1,47 @@
+# Dépendances
+node_modules/
+.npm/
+
+# Builds
+dist/
+*.tsbuildinfo
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / outils
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers volumineux / binaires
+application/
+*.exe
+*.dmg
+*.AppImage
+*.apk
+*.deb
+
+# Caches et fichiers système
+snap/
+.local/
+.cache/
+.mozilla/
+.config/
+.gnupg/
+.ssh/
+.docker/
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.gitconfig
+.happyserv/
+.anthracode/
